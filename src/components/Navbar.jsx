@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Navbar.css";
 import Modal from "./Modal";
 import InputForm from "./InputForm";
 import { NavLink } from "react-router-dom";

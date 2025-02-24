@@ -1,7 +1,7 @@
 import { useState } from "react";
+import "./Home.css";
 import foodRecipe from "../assets/foodrecipe3img.jpeg"; // Image for the intro section
 import Navbar from "../components/Navbar"; // Navbar component
-import Footer from "../components/Footer"; // Footer component
 import RecipeItems from "../components/RecipeItems"; // Component for displaying recipe items
 import { useNavigate } from "react-router-dom"; // Use navigate hook for routing
 import Modal from "../components/Modal"; // Modal for login/signup
@@ -28,11 +28,8 @@ const Home = () => {
         <div className="left">
           <h1>Food Recipe</h1>
           <h5>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using Content here, content
-            here, making it look like readable English.
+            "Explore a world of flavors with our food app! 🍽️✨ Save your
+            favorite recipes and cook with ease!"
           </h5>
           <button onClick={addRecipe} aria-label="Share your recipe">
             Share your recipe
@@ -73,9 +70,6 @@ const Home = () => {
       <div className="recipe">
         <RecipeItems />
       </div>
-
-      {/* Footer component */}
-      <Footer />
     </>
   );
 };

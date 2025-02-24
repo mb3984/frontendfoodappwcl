@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import axios from "axios";
+import "./InputForm.css";
 
 const InputForm = ({ setIsOpen }) => {
   const [email, setEmail] = useState("");

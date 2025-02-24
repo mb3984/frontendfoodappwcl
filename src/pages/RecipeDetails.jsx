@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom"; // Import the data loader
 import profileImage from "../assets/profileimagefood.png"; // Default profile image
+import "./RecipeDetails.css";
 
 const RecipeDetails = () => {
   // Get recipe data from loader

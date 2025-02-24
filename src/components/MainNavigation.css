@@ -1,0 +1,38 @@
+/* Layout Container */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  background: #f8f9fa; /* Light gray background */
+}
+
+/* Main Content */
+.content {
+  flex: 1; /* Pushes the footer to the bottom */
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 10px;
+  }
+}

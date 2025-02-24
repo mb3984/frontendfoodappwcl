@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./Modal.css";
 
 const Modal = ({ children, onClose }) => {
   // Close modal when "Escape" key is pressed

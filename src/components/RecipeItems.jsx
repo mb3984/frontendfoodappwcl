@@ -3,6 +3,7 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { BsStopwatchFill } from "react-icons/bs";
 import { FaHeart, FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import "./RecipeItems.css";
 import axios from "axios";
 
 const RecipeItems = () => {

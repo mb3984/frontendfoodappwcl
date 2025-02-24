@@ -1,0 +1,49 @@
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0; /* Covers the whole screen */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px); /* Subtle blur effect */
+  z-index: 999;
+}
+
+/* Modal Container */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  width: 90%;
+  max-width: 500px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .modal {
+    width: 95%;
+    padding: 20px;
+  }
+}

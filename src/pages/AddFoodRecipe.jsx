@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./AddFoodRecipe.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,34 +25,32 @@ const AddFoodRecipe = () => {
     e.preventDefault();
     setLoading(true);
 
-    const formData = new FormData();
-    formData.append("title", recipeData.title);
-    formData.append("time", recipeData.time);
-    formData.append("instructions", recipeData.instructions);
-
-    // Format ingredients to an array of strings
+    // Format ingredients into an array of strings
     const formattedIngredients = recipeData.ingredients
       .split(",")
       .map((item) => item.trim())
       .filter((item) => item !== "");
-    formData.append("ingredients", JSON.stringify(formattedIngredients));
 
-    // Add imageUrl as a text field (URL string)
-    formData.append("imageUrl", recipeData.imageUrl);
+    // Prepare JSON payload
+    const recipePayload = {
+      ...recipeData,
+      ingredients: formattedIngredients,
+    };
 
     try {
       await axios.post(
-        "https://backendfoodappwcl.onrender.com/recipe/post", // Use your backend endpoint
-        formData,
+        "https://backendfoodappwcl.onrender.com/recipe/post", // Your backend endpoint
+        recipePayload,
         {
           headers: {
             "Content-Type": "application/json",
-            authorization: "Bearer " + localStorage.getItem("token"),
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
-      alert("Recipe added successfully");
-      navigate("/"); // Redirect to homepage or other page
+
+      alert("Recipe added successfully!");
+      navigate("/"); // Redirect after successful submission
     } catch (error) {
       console.error(
         "Error adding recipe:",
