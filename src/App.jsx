@@ -26,14 +26,17 @@ const getMyRecipes = async () => {
 
   if (!user) {
     console.warn("⚠️ No user logged in, redirecting to login.");
-    return []; // Prevent errors if no user is logged in or if user._id is missing
+    return []; // Prevent errors if no user is logged in
   }
 
   try {
     const allRecipes = await getAllRecipes();
+
+    // Ensure createdBy exists before accessing _id
     const userRecipes = allRecipes.filter(
-      (recipe) => recipe.createdBy._id === user._id
+      (recipe) => recipe.createdBy && recipe.createdBy._id === user._id
     );
+
     console.log("🔍 User's recipes:", userRecipes);
     return userRecipes;
   } catch (error) {

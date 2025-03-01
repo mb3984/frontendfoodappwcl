@@ -39,7 +39,7 @@ const RecipeItems = () => {
       }
 
       await axios.delete(
-        `https://backendfoodappwcl.onrender.com/delete/${id}`,
+        `https://backendfoodappwcl.onrender.com/recipe/delete/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
